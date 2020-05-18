@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User Stories:
 
-## Available Scripts
+As _____
+I want ___
+so that ___
 
-In the project directory, you can run:
+Given ____
+When _____
+Then ______
 
-### `npm start`
+1.  As an anonomous user, I want to browse movies, so that I can see what movies are avaliable
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Given an anonomous user, when they are on the home page, then they see a list of movies names.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Ref: Browsing Movies Design
+____________________________________________________________________________________________________________________
 
-### `npm test`
+3.  As an anonomous user, I want to look at a specific movie, so that I can see details and reviews.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Given an anonomous user, when they click on a movie, then they see details and reviews of the clicked movie.
 
-### `npm run build`
+Ref: Movie Details and Reviews Design
+____________________________________________________________________________________________________________________
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2.  As an anonomous user, I want to search for movies, so that I can see a list of movies that meet that search criteria.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Given an anonomous user, when they search for a movie, then they see a list of movies that have that title.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ref: Search Bar Design
+____________________________________________________________________________________________________________________
 
-### `npm run eject`
+6.  As a logged in user, I want to post a review on a movie, so that I can have my voice heard.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Given a logged in user, when they populate the leave a comment box and click submit, then a post request to the back end service at /reviews that takes review.email && review.movieId && review.reviewTitle && review.reviewText.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ref: Searching for Movie Details and Reviews Design / logged in user
+____________________________________________________________________________________________________________________
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4.  As a user, I want to be able to register my email and create a password, so that I can utilize all the features of the application.a
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Given a non registered email, when you click on "register", then you can submit a email and password.
 
-## Learn More
+Given a registered user, when the registered user tries to submit their email for registration, then a response says "That email is already registered as a user".
+_____________________________________________________________________________________________________________________
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5.  As a user, I want to be able to log in, so that I can post reviews.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Given an anonomous user, when enter their email and password and press the 'login' button, then a response says "Successful Login" or "Unsuccessful Login" depending on a valid email and password.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Ref: Login Design
