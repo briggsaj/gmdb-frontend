@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import MovieList from './MovieList.js'
 
 class App extends React.Component {
   state = {
@@ -10,6 +11,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.state.testState}
+        <MovieList/>
       </div>
     )
   }
