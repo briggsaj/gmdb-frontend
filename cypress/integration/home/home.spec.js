@@ -1,8 +1,8 @@
-describe("Home page", () => {
+describe("Title", () => {
     beforeEach(() => {
         cy.visit('/')
     })
-    it("header contains react", () => {
-      cy.get('.App-header').should('contain', 'React')
+    it("successfully loads", () => {
+      cy.visit('http://localhost:3000')
     })
   })
