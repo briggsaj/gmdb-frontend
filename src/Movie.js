@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Movie extends React.Component{
+export default class Movie extends React.Component{
     
     constructor(props){
         super(props);
@@ -19,8 +19,8 @@ class Movie extends React.Component{
         return (
         <div>
             movie
-        <div/>
+        </div>
         )
     }
 } 
-export default Movie
+// export default {Movie}

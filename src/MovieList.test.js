@@ -1,10 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import MovieList from 'MovieList.js'
+import MovieList from './MovieList.js'
 import App from './App'
 
 describe ('MovieLists are displayed', () => {
-    test('loads movies to display', () => {
+
+  function flushPromises() {
+    return new Promise(resolve => setImmediate(resolve));
+  }
+
+    test('loads movies to display', async () => {
         //setup
         const movieTitle = "Star Wars"
         const movieId = 123
@@ -15,19 +20,21 @@ describe ('MovieLists are displayed', () => {
           return Promise.resolve({
             json: () =>{
               return Promise.resolve ({
-                name: movieTitle,
-                movieId: movieTitle
+                title: movieTitle,
+                movieId: movieId
               })
             }
           })
         })
-        const wrapper = await shallow (<MovieList/>)
+        const wrapper = shallow (<MovieList/>)
         //exercise
-        await wrapper.update
+        await flushPromises()
+
+        wrapper.update
 
         //assert
-        expect(fetchMock).toHaveBeenCalledWith("https://localhost:3001/movies")
-        expect(wrapper.state('name')).toBe(movieTitle)
+        expect(fetchMock).toHaveBeenCalledWith("http://localhost:3001/movies")
+        expect(wrapper.state('title')).toBe(movieTitle)
 
         //teardown
         global.fetch = oldFetch
