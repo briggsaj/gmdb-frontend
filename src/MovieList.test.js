@@ -11,8 +11,10 @@ describe ('MovieLists are displayed', () => {
 
     test('loads movies to display', async () => {
         //setup
-        const movieTitle = "Star Wars"
-        const movieId = 123
+        const sampleMovies = [{
+               title:"Star Wars"
+        }]
+        //const movieId = 123
         const fetchMock = jest.fn()
         const oldFetch = global.fetchMock
         global.fetch = fetchMock
@@ -20,8 +22,7 @@ describe ('MovieLists are displayed', () => {
           return Promise.resolve({
             json: () =>{
               return Promise.resolve ({
-                title: movieTitle,
-                movieId: movieId
+                moviesList: sampleMovies
               })
             }
           })
@@ -34,7 +35,7 @@ describe ('MovieLists are displayed', () => {
 
         //assert
         expect(fetchMock).toHaveBeenCalledWith("http://localhost:3001/movies")
-        expect(wrapper.state('title')).toBe(movieTitle)
+        expect(wrapper.state('moviesList').title).toBe(sampleMovies.title)
 
         //teardown
         global.fetch = oldFetch
