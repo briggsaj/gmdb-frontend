@@ -1,10 +1,13 @@
 import React from 'react'
 
 export default class Movie extends React.Component{
-    
+
     constructor(props){
         super(props);
-        this.state.title = props.title
+        // this.state = {
+        //     movieId: Number,
+        //     poster: ''
+        // }
     }
 
     componentDidMount(){
@@ -17,8 +20,12 @@ export default class Movie extends React.Component{
 
     render(){
         return (
-        <div>
+        <div >
             movie
+            <img 
+                src={this.props.poster}
+                alt="new"
+                />
         </div>
         )
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Movie from './Movie'
 
 export default class MovieList extends React.Component{
     state = {
@@ -31,7 +32,7 @@ export default class MovieList extends React.Component{
                <section>
                    {
                        this.state.moviesList.map((movie) => (
-                           <h2>{movie.title}</h2>
+                           <Movie movieId={movie.movieId} poster={movie.poster} />
                        ))
                    }
                </section>
